@@ -1,0 +1,19 @@
+{
+  "name": "todo-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.22.3",
+    "helmet": "^8.1.0",
+    "mongoose": "^8.24.5",
+    "zod": "^3.25.76"
+  }
+}

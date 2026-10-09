@@ -1,0 +1,20 @@
+{
+  "name": "weekly-task-planner",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev --workspace=server\" \"npm:dev --workspace=client\"",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start --workspace=server",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.5",
+    "prettier": "^3.9.9"
+  }
+}
