@@ -1,0 +1,122 @@
+.task-list {
+  min-width: 0;
+}
+.task-swipe-wrap {
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #eff1f5;
+  touch-action: pan-y;
+}
+.task-swipe-wrap:last-child {
+  border-bottom: 0;
+}
+.task-row {
+  min-height: 71px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+.task-check {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid #90a0ff;
+  border-radius: 2px;
+  background: white;
+  color: white;
+  cursor: pointer;
+}
+.task-check.checked {
+  border-color: transparent;
+  background: transparent;
+  color: #579472;
+}
+.task-copy {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.task-title {
+  max-width: 100%;
+  overflow: hidden;
+  color: #29334a;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.task-title.is-complete {
+  color: #9299a8;
+  text-decoration: line-through;
+}
+.task-subline {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  color: #969eae;
+  font-size: 10px;
+}
+.task-actions {
+  display: flex;
+  gap: 2px;
+}
+.icon-button.delete-icon:hover {
+  background: #fff0f0;
+  color: #cf5f66;
+}
+.swipe-delete {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 auto;
+  width: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  border: 0;
+  background: #e8797d;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.task-swipe-wrap.is-revealed .task-row {
+  transform: translateX(-94px);
+}
+.search-results .task-row {
+  min-height: 61px;
+}
+.search-results .task-actions .icon-button {
+  width: 27px;
+  flex-basis: 27px;
+}
+
+@media (max-width: 760px) {
+  .task-row {
+    gap: 9px;
+  }
+  .task-actions .icon-button {
+    width: 28px;
+    flex-basis: 28px;
+  }
+}
